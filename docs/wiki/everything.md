@@ -1,11 +1,50 @@
-Star systems start from a protoplanetary disc. The disc starts with
-a uniform mass of dust. The disc is represented by an array of
-numbers, each number representing the amount of dust at a section of
-the star system's disc. The disc is flat, but in this simulation it
-is being represented by a 1D line, considering objects by its
-distance to the star instead of its position along an orbit.
-Considering that planets will orbit billions of times in the
-simulation, it may be irrelevant to measure their exact orbital
-positions. Planets will occasionally spawn in the disc, then begin
-to eat up some of the dust in the disc. Planets will eat dust that
-is near them and gain mass over time.
+### Premise
+
+This project is inspired by many stories told about the solar system,
+from snowball Earths, moons breaking up to form rings, to lost gas
+giants ejected from the system. This project aims to simulate the
+evolution of a star system, from start to end, allowing users to
+witness eons of cosmic stories in the span of a few minutes.
+
+The simulation is pseudoscientific; while it is inspired by some
+ideas and theories of science, it does not aim to be scientifically
+accurate. For example, while planets orbit around a star in a near-2D
+plane, this simulation places them on a 1D axis because it only
+considers the planets' semi-major axes.
+
+### StarSystem
+
+Star systems consist of a central star, a protoplanetary disk, and a
+variable number of planets. The elements making up this system are
+lined up in a single axis: the distance to the central star.
+
+(Unimplemented) Over time, planets can form from material in the
+protoplanetary disk. Sections of the disk that have material are
+eligible to form a planet, and sections with more material will
+form a planet more quickly.
+
+(Unimplemented) Over time, planets will collect material from the
+protoplanetary disk. Mass from the disk will be transferred to the
+planets, which means that the disk's mass will decrease. The planets
+will take mass from different areas of the disk.
+
+(Unimplemented) Over time, if there are discrepancies in the disk
+(e.g. a hole in the disk), material in the disk will diffuse,
+allowing the disk's material to smooth and spread out if planets
+either take from the disk or give matter to the disk.
+
+### Planet
+
+A planet is a large, round celestial body. Planets differ by mass and
+distance to the star. The star at the center of the star system is
+also a "planet" since it is also a rounded celestial body with a
+mass.
+
+(Unimplemented) Over time, a planet will collect material from its
+star system's protoplanetary disk. As the planet collects matter
+from the disk, the location of the missing disk material will be
+distributed so the planet doesn't take material from an exact in the
+system. Larger planets will have a wider distribution of material
+to collect from. They will also collect material faster; this will
+be represented by the fraction of a disk section that a planet can
+take at a given instance of time.
