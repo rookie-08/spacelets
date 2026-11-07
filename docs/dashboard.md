@@ -8,12 +8,14 @@ Tracking what is yet to be done.
 
 	- [X] UML diagrams
 
-	- [ ] Create classes
+	- [X] Create classes
 
 	- [ ] Address TODOs
 
 		- [ ] Planet.java
 
 		- [ ] StarSystem.java
+
+		- [ ] Simulation.java
 
 - [ ] Next steps...

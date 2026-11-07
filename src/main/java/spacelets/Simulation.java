@@ -50,8 +50,10 @@ public class Simulation { // TODO: Rename to "Spacelets"
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		System.out.println("Starting simulation.");
 		Simulation simulation = new Simulation();
 		simulation.update();
+		System.out.println("End of program");
 	}
 
 }
