@@ -9,7 +9,7 @@ import java.util.Random;
  * 
  * @author Rookie
  */
-public class Simulation { // TODO: Rename to "Spacelets"
+public class Simulation {
 	/**
 	 * The actual model star system of the class.
 	 */
@@ -26,12 +26,20 @@ public class Simulation { // TODO: Rename to "Spacelets"
 	Random random;
 
 	/**
-	 * Create a brand new simulation.
+	 * Create a brand new simulation with a random seed.
 	 */
 	public Simulation() {
 		system = new StarSystem();
 		age = 0;
-		random = new Random(); // TODO: Configure seed
+		random = new Random();
+	}
+
+	/**
+	 * Create a brand new simulation with a desired seed.
+	 */
+	public Simulation(long seed) {
+		this();
+		random.setSeed(seed);
 	}
 
 	/**

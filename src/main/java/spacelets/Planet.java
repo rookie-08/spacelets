@@ -20,10 +20,12 @@ public class Planet {
 	 * Create a planet with a set mass.
 	 * 
 	 * @param mass The mass to set this planet to, in <unit>s.
+	 * @param position Where to place this planet. Distance from 
+	 * star in <unit>s.
 	 */
-	public Planet(double mass) {
+	public Planet(double mass, double posiiton) {
 		this.mass = mass;
-		this.position = 0; // TODO: Add position param
+		this.position = posiiton;
 	}
 
 	/**

@@ -20,11 +20,6 @@ public class StarSystem {
 	private static final double DISC_MASS = 100.0;
 
 	/**
-	 * The mass of the star when creating this system.
-	 */
-	private static final double STAR_MASS = 300000.0;
-
-	/**
 	 * The protoplanetary disc and its sections' masses.
 	 */
 	private final double[] disc;
@@ -33,11 +28,6 @@ public class StarSystem {
 	 * The planets orbiting this system's star.
 	 */
 	private final List<Planet> planets;
-
-	/**
-	 * The star at the center of this system.
-	 */
-	private final Planet star; // TODO: Remove?
 
 	/**
 	 * Create a new system with a star and protoplanetary disc, but
@@ -52,12 +42,7 @@ public class StarSystem {
 		}
 		// Create planets and star
 		planets = new ArrayList<>();
-		star = new Planet(STAR_MASS);
 	}
-
-	// TODO: remove spawnPlanet() from UML
-
-	// TODO: remove growPlanet() from UML
 
 	/**
 	 * Makes changes to the system.

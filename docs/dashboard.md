@@ -12,10 +12,12 @@ Tracking what is yet to be done.
 
 	- [ ] Address TODOs
 
-		- [ ] Planet.java
+		- [X] Planet.java
 
-		- [ ] StarSystem.java
+		- [X] StarSystem.java
 
-		- [ ] Simulation.java
+		- [X] Simulation.java
+
+		- [ ] Simulation.java -> Spacelets.java
 
 - [ ] Next steps...
