@@ -10,4 +10,10 @@ Tracking what is yet to be done.
 
 	- [ ] Create classes
 
+	- [ ] Address TODOs
+
+		- [ ] Planet.java
+
+		- [ ] StarSystem.java
+
 - [ ] Next steps...
