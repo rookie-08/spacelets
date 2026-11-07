@@ -9,7 +9,7 @@ import java.util.Random;
  * 
  * @author Rookie
  */
-public class Simulation {
+public class Spacelets {
 	/**
 	 * The actual model star system of the class.
 	 */
@@ -28,7 +28,7 @@ public class Simulation {
 	/**
 	 * Create a brand new simulation with a random seed.
 	 */
-	public Simulation() {
+	public Spacelets() {
 		system = new StarSystem();
 		age = 0;
 		random = new Random();
@@ -37,7 +37,7 @@ public class Simulation {
 	/**
 	 * Create a brand new simulation with a desired seed.
 	 */
-	public Simulation(long seed) {
+	public Spacelets(long seed) {
 		this();
 		random.setSeed(seed);
 	}
@@ -59,7 +59,7 @@ public class Simulation {
 	 */
 	public static void main(String[] args) {
 		System.out.println("Starting simulation.");
-		Simulation simulation = new Simulation();
+		Spacelets simulation = new Spacelets();
 		simulation.update();
 		System.out.println("End of program");
 	}
