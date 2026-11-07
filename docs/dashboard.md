@@ -1,10 +1,12 @@
 Tracking what is yet to be done.
 
-- [ ] Create wiki to help explain code
+- [X] Create wiki to help explain code
+
+	- [X] Freewrite to help with UML
 
 - [ ] Develop system, star, disc, and planets(?)
 
-	- [ ] UML diagrams
+	- [X] UML diagrams
 
 	- [ ] Create classes
 
