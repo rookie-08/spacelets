@@ -41,3 +41,17 @@ A list of ideas for the project.
 - Albedo
 
 - Chemistry
+
+- Planets too close to the sun cannot hold onto volatiles
+
+- Disk has composition; heavier elements are closer to the sun
+
+- Volatiles have states of matter
+
+- Magma and volcanism
+
+- Brown dwarfs
+
+- Tidal locking
+
+- Surface temperature, internal temperature
