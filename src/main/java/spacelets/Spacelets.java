@@ -48,7 +48,7 @@ public class Spacelets {
 	 */
 	public void update() {
 		age++;
-		system.update();
+		system.update(random);
 	}
 
 	/**

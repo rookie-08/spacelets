@@ -65,6 +65,12 @@ public class StarSystem {
 	private double loseMass(double position, double frac) {
 		// Calculate section number
 		int section = (int)(position / DISC_LENGTH * DISC_NUM_SECTIONS);
+		if (section < 0) {
+			section = 0;
+		}
+		if (section >= DISC_NUM_SECTIONS) {
+			section = DISC_NUM_SECTIONS - 1;
+		}
 
 		// Remove mass from section
 		double massTaken = disc[section] * frac;
@@ -113,14 +119,20 @@ public class StarSystem {
 	 * @param random Random number generator.
 	 */
 	private void feedPlanets(Random random) {
-		// ...
+		for (int i = 0; i < planets.size(); i++) {
+			Planet planet = planets.get(i);
+			double loc = planet.chooseFeedLoc(random);
+			double massTaken = loseMass(loc, 0.05);
+			planet.gainMass(massTaken);
+		}
 	}
 
 	/**
 	 * Makes changes to the system.
 	 */
-	public void update() {
-
+	public void update(Random random) {
+		trySummon(random);
+		feedPlanets(random);
 	}
 
 	/**

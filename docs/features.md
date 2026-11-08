@@ -25,3 +25,19 @@ A list of ideas for the project.
 - Export simulation data as CSV (or print as table)
 
 - Stop using `random` as a parameter
+
+- Settings
+
+	- Stop planets from forming
+
+	- Modify constants
+
+	- Etc...
+
+- Planets have names
+
+- Habitability
+
+- Albedo
+
+- Chemistry
