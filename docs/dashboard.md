@@ -12,6 +12,18 @@ Next Steps
 
 	- [X] Add `v0.2` milestones
 
+- [ ] Software Design
+
+	- [X] Describe requirements
+
+	- [X] Code outline
+
+	- [X] UML diagrams
+
+	- [ ] Code stubs
+
+	- [ ] Implementations 
+
 - [ ] `v0.2` milestones
 
 	- [ ] Planets can spawn
