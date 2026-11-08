@@ -2,52 +2,39 @@ Tracking what is yet to be done.
 
 Next Steps
 
-- [ ] Review Considerations
+- [X] Review Considerations
 
-- [ ] Select Considerations to Turn Into Next Steps
+- [X] Select Considerations to Turn Into Next Steps
+
+- [X] Rewrite `everything.md`
+
+- [X] Update `version.md`
+
+	- [X] Add `v0.2` milestones
+
+- [ ] `v0.2` milestones
+
+	- [ ] Planets can spawn
+
+		- [ ] StarSystem.summon()
+
+		- [ ] StarSystem.trySummon()
+
+	- [ ] Planets can take debris from disk
+
+		- [ ] StarSystem.feedPlanets()
+
+		- [ ] Planet.gainMass(mass)
+
+		- [ ] Planet.chooseFeedLoc()
+
+		- [ ] StarSystem.loseMass(loc)
 
 Considerations
 
-- Rewrite `everything.md`
-
-- Collect unimplemented ideas from `everything.md`
-
-- Classify version `v0.1` as "I got a simulation running, even
-though nothing is happening" and develop a version `v0.2` for "this
-simulation evolves with one rule or two (instead of 1000 rules)"
-
-	- Update status of version v0.0 to passed (version.md)
-
-	- Update status of version v0.1 to current (version.md)
-
-	- Define version v0.2
-
-		- Collect ideas to implement for version v0.2
-
-		- Write description of v0.2 in version.md
-
-		- Create subgoals stemming from v0.2
-
-- Version v0.2 ideas
-
-	- Spawn planets randomly in the disc if disc section mass is
-	greater than 0.1
-
-	- Planets collect matter from disc
-
-		- Planets collect matter from not just a single section of
-		the disc
-
-			- Larger planets collect from a wide range, small planets
-			collect from a small range
-
-		- Larger planets collect mass more quickly
-
-		- Planets cannot collect from empty sections of the disc
-	
-	- Define units
-
 - Version v0.3+ ideas
+
+	- Define units
 
 	- Planets begin to pull on each other
 
