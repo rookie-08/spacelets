@@ -99,7 +99,12 @@ public class StarSystem {
 	 * @param random Random number generator.
 	 */
 	private void trySummon(Random random) {
-		// ...
+		for (int i = 0; i < DISC_NUM_SECTIONS; i++) {
+			double sectionMass = disc[i];
+			if (random.nextDouble() < 0.01 * sectionMass) {
+				summon(random, i);
+			} 
+		}
 	}
 
 	/**
