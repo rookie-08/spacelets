@@ -12,7 +12,7 @@ Next Steps
 
 	- [X] Add `v0.2` milestones
 
-- [ ] Software Design
+- [X] Software Design
 
 	- [X] Describe requirements
 
@@ -20,31 +20,37 @@ Next Steps
 
 	- [X] UML diagrams
 
-	- [ ] Code stubs
+	- [X] Code stubs
 
-	- [ ] Implementations 
+	- [X] Implementations 
 
-- [ ] `v0.2` milestones
+- [X] `v0.2` milestones
 
-	- [ ] Planets can spawn
+	- [X] Planets can spawn
 
-		- [ ] StarSystem.summon()
+		- [X] StarSystem.summon()
 
-		- [ ] StarSystem.trySummon()
+		- [X] StarSystem.trySummon()
 
-	- [ ] Planets can take debris from disk
+	- [X] Planets can take debris from disk
 
-		- [ ] StarSystem.feedPlanets()
+		- [X] StarSystem.feedPlanets()
 
-		- [ ] Planet.gainMass(mass)
+		- [X] Planet.gainMass(mass)
 
-		- [ ] Planet.chooseFeedLoc()
+		- [X] Planet.chooseFeedLoc()
 
-		- [ ] StarSystem.loseMass(loc)
+		- [X] StarSystem.loseMass(loc)
 
 Considerations
 
 - Version v0.3+ ideas
+
+	- Disk class
+
+	- Refactor disc to disk
+
+	- Verbose simulation display (terminal) and softcoding
 
 	- Define units
 
