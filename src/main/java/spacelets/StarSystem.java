@@ -82,7 +82,13 @@ public class StarSystem {
 	 * @param section The ID of the disk section to place the planet.
 	 */
 	private void summon(Random random, int section) {
-		// ...
+		double distance0 = (DISC_LENGTH * section / DISC_NUM_SECTIONS);
+		double distance1 = (DISC_LENGTH * (section + 1) / DISC_NUM_SECTIONS);
+		double distance = random.nextDouble(distance0, distance1);
+
+		double mass = loseMass(distance, 0.1);
+		Planet planet = new Planet(mass, distance);
+		planets.add(planet);
 	}
 
 	/**
