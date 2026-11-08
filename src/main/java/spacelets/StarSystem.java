@@ -13,7 +13,12 @@ public class StarSystem {
 	/**
 	 * The number of disc sections to have when creating this system.
 	 */
-	private static final int DISC_LENGTH = 10;
+	private static final int DISC_NUM_SECTIONS = 10;
+
+	/**
+	 * The distance of the last disc section to the star, in <unit>s.
+	 */
+	private static final double DISC_LENGTH = 10.0;
 
 	/**
 	 * The total mass of the disc when creating this system.
@@ -36,9 +41,9 @@ public class StarSystem {
 	 */
 	public StarSystem() {
 		// Create disc
-		disc = new double[DISC_LENGTH];
-		double massPerDiscSection = DISC_MASS / DISC_LENGTH;
-		for (int i = 0; i < DISC_LENGTH; i++) {
+		disc = new double[DISC_NUM_SECTIONS];
+		double massPerDiscSection = DISC_MASS / DISC_NUM_SECTIONS;
+		for (int i = 0; i < DISC_NUM_SECTIONS; i++) {
 			disc[i] = massPerDiscSection;
 		}
 		// Create planets and star
@@ -58,8 +63,14 @@ public class StarSystem {
 	 * @return The amount of mass taken from the disk section.
 	 */
 	private double loseMass(double position, double frac) {
-		// ...
-		return 0.0;
+		// Calculate section number
+		int section = (int)(position / DISC_LENGTH * DISC_NUM_SECTIONS);
+
+		// Remove mass from section
+		double massTaken = disc[section] * frac;
+		disc[section] = disc[section] - massTaken;
+
+		return massTaken;
 	}
 	
 	/**
