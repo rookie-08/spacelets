@@ -21,3 +21,7 @@ A list of ideas for the project.
 - Planets have temperatures.
 
 - The star can change radius, luminosity, brightness, etc over time
+
+- Export simulation data as CSV (or print as table)
+
+- Stop using `random` as a parameter

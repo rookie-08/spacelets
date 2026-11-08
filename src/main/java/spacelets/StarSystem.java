@@ -2,6 +2,7 @@ package spacelets;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Contains a star, a protoplanetary disc, and planets.
@@ -42,6 +43,55 @@ public class StarSystem {
 		}
 		// Create planets and star
 		planets = new ArrayList<>();
+	}
+
+	/**
+	 * Take mass from a section of the protoplanetary disk.
+	 * 
+	 * Even though `position` is a double and not an int, the
+	 * parameter will be translated to the closest section of
+	 * disk debris to take.
+	 * 
+	 * @param position The distance of the section to the star.
+	 * @param frac The fraction of matter, from the section of the
+	 * disk, to take. 
+	 * @return The amount of mass taken from the disk section.
+	 */
+	private double loseMass(double position, double frac) {
+		// ...
+		return 0.0;
+	}
+	
+	/**
+	 * Summons a planet in a given section of disk.
+	 * 
+	 * The planet will be placed randomly in the disk section.
+	 * 
+	 * @param random Random number generator.
+	 * @param section The ID of the disk section to place the planet.
+	 */
+	private void summon(Random random, int section) {
+		// ...
+	}
+
+	/**
+	 * Rolls multiple chances. Across all sections of disk. For each
+	 * time a chance is successful in this method, a planet will be
+	 * summoned.
+	 * 
+	 * @param random Random number generator.
+	 */
+	private void trySummon(Random random) {
+		// ...
+	}
+
+	/**
+	 * Makes each planet collect matter from the protoplanetary disk.
+	 * 
+	 * @param random Random number generator.
+	 */
+	private void feedPlanets(Random random) {
+		// ...
 	}
 
 	/**

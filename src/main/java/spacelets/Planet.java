@@ -1,5 +1,7 @@
 package spacelets;
 
+import java.util.Random;
+
 /**
  * A celestial body with a mass and distance to its parent body.
  * 
@@ -29,15 +31,6 @@ public class Planet {
 	}
 
 	/**
-	 * Returns the posiiton of the planet in <unit>s.
-	 * 
-	 * @return The posiiton of the planet, in <unit>s.
-	 */
-	public double getPosition() {
-		return position;
-	}
-
-	/**
 	 * Returns a String containing the planet's raw data.
 	 */
 	@Override 
@@ -52,5 +45,19 @@ public class Planet {
 	 */
 	public void gainMass(double amt) {
 		mass += amt;
+	}
+
+	/**
+	 * Selects a random location in the disk to take matter from.
+	 * The location, on average, is the same as the planet's
+	 * location. However, the variance of the selected location
+	 * increases as the planet's mass increases.
+	 * 
+	 * @param random A random number generator.
+	 * @return The disk section's distance to the star.
+	 */
+	public double chooseFeedLoc(Random random) {
+		// ...
+		return 0.0;
 	}
 }
