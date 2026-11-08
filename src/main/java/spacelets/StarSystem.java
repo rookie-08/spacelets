@@ -118,7 +118,7 @@ public class StarSystem {
 	 */
 	@Override 
 	public String toString() {
-		return "System [Planets(" + planets.size() + ")]";
+		return "StarSystem [Planets(" + planets.size() + ")]";
 	}
 
 }
