@@ -2,45 +2,9 @@ Tracking what is yet to be done.
 
 Next Steps
 
-- [X] Review Considerations
+- [ ] Review Considerations
 
-- [X] Select Considerations to Turn Into Next Steps
-
-- [X] Rewrite `everything.md`
-
-- [X] Update `version.md`
-
-	- [X] Add `v0.2` milestones
-
-- [X] Software Design
-
-	- [X] Describe requirements
-
-	- [X] Code outline
-
-	- [X] UML diagrams
-
-	- [X] Code stubs
-
-	- [X] Implementations 
-
-- [X] `v0.2` milestones
-
-	- [X] Planets can spawn
-
-		- [X] StarSystem.summon()
-
-		- [X] StarSystem.trySummon()
-
-	- [X] Planets can take debris from disk
-
-		- [X] StarSystem.feedPlanets()
-
-		- [X] Planet.gainMass(mass)
-
-		- [X] Planet.chooseFeedLoc()
-
-		- [X] StarSystem.loseMass(loc)
+- [ ] Select Considerations to Turn Into Next Steps
 
 Considerations
 
