@@ -60,7 +60,10 @@ public class Spacelets {
 	public static void main(String[] args) {
 		System.out.println("Starting simulation.");
 		Spacelets simulation = new Spacelets();
-		simulation.update();
+		for (int i = 0; i < 1000; i++) {
+			simulation.update();
+			System.out.println(simulation.system);
+		}
 		System.out.println("End of program");
 	}
 
