@@ -8,6 +8,8 @@ import java.util.Random;
  * @author Rookie
  */
 public class Planet {
+	private static final double CFL_K0 = 1.0;
+	
 	/**
 	 * The mass of this planet, in <unit>s.
 	 */
@@ -57,7 +59,11 @@ public class Planet {
 	 * @return The disk section's distance to the star.
 	 */
 	public double chooseFeedLoc(Random random) {
-		// ...
-		return 0.0;
+		double mean = position;
+		double stddev = CFL_K0 * mass;
+
+		double x = random.nextGaussian(mean, stddev);
+
+		return x;
 	}
 }
