@@ -21,12 +21,18 @@ public class StarSystem {
 	private final List<Planet> planets;
 
 	/**
+	 * Random number generator for methods.
+	 */
+	private final Random random;
+
+	/**
 	 * Create a new system with a star and protoplanetary disk, but
 	 * no planets (yet).
 	 */
-	public StarSystem() {
+	public StarSystem(Random random) {
 		disk = new Disk();
 		planets = new ArrayList<>();
+		this.random = random;
 	}
 	
 	/**
@@ -37,7 +43,7 @@ public class StarSystem {
 	 * @param random Random number generator.
 	 * @param section The ID of the disk section to place the planet.
 	 */
-	private void summon(Random random, double mass, int section) {
+	private void summon(double mass, int section) {
 		double distance = disk.choosePosition(random, section);
 		Planet planet = new Planet(mass, distance);
 		planets.add(planet);
@@ -50,12 +56,12 @@ public class StarSystem {
 	 * 
 	 * @param random Random number generator.
 	 */
-	private void trySummon(Random random) {
+	private void trySummon() {
 		double[] summons = disk.takeSummons(random);
 		for (int i = 0; i < summons.length; i++) {
 			double summonMass = summons[i];
 			if (summonMass > 0) {
-				summon(random, summonMass, i);
+				summon(summonMass, i);
 			}
 		}
 	}
@@ -65,7 +71,7 @@ public class StarSystem {
 	 * 
 	 * @param random Random number generator.
 	 */
-	private void feedPlanets(Random random) {
+	private void feedPlanets() {
 		for (int i = 0; i < planets.size(); i++) {
 			Planet planet = planets.get(i);
 			double loc = planet.chooseFeedLoc(random);
@@ -77,9 +83,9 @@ public class StarSystem {
 	/**
 	 * Makes changes to the system.
 	 */
-	public void update(Random random) {
-		trySummon(random);
-		feedPlanets(random);
+	public void update() {
+		trySummon();
+		feedPlanets();
 	}
 
 	/**

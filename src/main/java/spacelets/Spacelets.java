@@ -29,9 +29,9 @@ public class Spacelets {
 	 * Create a brand new simulation with a random seed.
 	 */
 	public Spacelets() {
-		system = new StarSystem();
-		age = 0;
 		random = new Random();
+		system = new StarSystem(random);
+		age = 0;
 	}
 
 	/**
@@ -48,7 +48,7 @@ public class Spacelets {
 	 */
 	public void update() {
 		age++;
-		system.update(random);
+		system.update();
 	}
 
 	/**
