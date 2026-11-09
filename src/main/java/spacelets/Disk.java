@@ -85,7 +85,14 @@ public class Disk {
 	 * @return The mass taken from the disk, in Earth masses.
 	 */
 	public double loseMass(int section, double frac) {
-		double massTaken = sections[section] * frac;
+		double usedFrac = frac;
+		if (usedFrac < 0.0) {
+			usedFrac = 0.0;
+		} else if (usedFrac > 1.0) {
+			usedFrac = 1.0;
+		}
+
+		double massTaken = sections[section] * usedFrac;
 		sections[section] -= massTaken;
 		return massTaken;
 	}
@@ -104,6 +111,15 @@ public class Disk {
 	public double loseMass(double position, double frac) {
 		// Calculate section number
 		int section = (int)(position / LENGTH * NUM_SECTIONS);
+		
+		// Edge cases (out of bounds)
+		if (section < 0) {
+			section = 0;
+		}
+		if (section >= NUM_SECTIONS) {
+			section = NUM_SECTIONS - 1;
+		}
+
 
 		// Remove mass from section
 		return loseMass(section, frac);

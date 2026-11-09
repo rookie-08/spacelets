@@ -84,4 +84,36 @@ public class DiskTest {
 		// Analyze
 		assertEquals(expected, actual);
 	}
+
+	@Test
+	public void loseMass4() {
+		// Setup
+		Disk disk = new Disk();
+		double position = 11.32;
+		double frac = -1.0;
+		String expected = "Disk [100.0, 9999999999]";
+
+		// Invoke
+		disk.loseMass(position, frac);
+		String actual = disk.toString();
+
+		// Analyze
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void loseMass5() {
+		// Setup
+		Disk disk = new Disk();
+		double position = -2.3;
+		double frac = 1.2;
+		String expected = "Disk [90.0, 0999999999]";
+
+		// Invoke
+		disk.loseMass(position, frac);
+		String actual = disk.toString();
+
+		// Analyze
+		assertEquals(expected, actual);
+	}
 }
