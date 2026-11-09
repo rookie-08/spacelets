@@ -59,4 +59,24 @@ be represented by the fraction of a disk section that a planet can
 take at a given instance of time.
 
 (Unimplemented)
-Planets have names, allowing them to be tracked.
+Planets have names, allowing them to be tracked. These names are
+pulled from a hardcoded list of pre-generated names.
+
+(Unimplemented)
+Planets exert forces on each other. Larger planets, having more mass,
+are more resistant to gravitational pulls. Larger planets also exert
+a more powerful and effective pull on neighboring planets. The pull
+of a planet is less effective with distance. Given that planets may
+never collide if they are far enough, there will be a limit where a
+planet will not move at all if the net force on it is insufficient.
+
+(Unimplemented)
+When a force acts on a planet, the planet will move based on how much
+orbital inertia it has. Orbital inertia determines how sensitive a
+planet is to gravitational forces. A planet with more mass has more
+orbital inertia. A planet that is closer to the star will also have
+more inertia, given that more force may be needed to adjust high
+orbital velocities near the star. A force pulling a planet away from
+its star will decrease its orbital inertia, increasing its distance
+from the star---and a force pulling the planet towards its star will
+decrease its orbital inertia, decreasing its distance to the star.
