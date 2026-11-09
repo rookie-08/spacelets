@@ -65,8 +65,6 @@ public class StarSystem {
 
 	/**
 	 * Makes each planet collect matter from the protoplanetary disk.
-	 * 
-	 * @param random Random number generator.
 	 */
 	private void feedPlanets() {
 		for (int i = 0; i < planets.size(); i++) {
