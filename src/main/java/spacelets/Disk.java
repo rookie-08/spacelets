@@ -33,14 +33,48 @@ public class Disk {
 	 * Create a new disk with uniform density.
 	 */
 	public Disk() {
-		// ...
-		sections = null;
+		sections = new double[NUM_SECTIONS];
+		double massPerSection = MASS / NUM_SECTIONS;
+		for (int i = 0; i < NUM_SECTIONS; i++) {
+			sections[i] = massPerSection;
+		}
 	}
 
 	@Override
 	public String toString() {
-		// ...
-		return "";
+		// Setup
+		StringBuilder builder = new StringBuilder();
+		double maxSectionMass = 0.0;
+		double netMass = 0.0;
+
+		// Get net and max mass
+		for (double sectionMass : sections) {
+			netMass += sectionMass;
+			if (sectionMass > maxSectionMass) {
+				maxSectionMass = sectionMass;
+			}
+		}
+
+		// Build string
+		builder.append("Disk [");
+		builder.append(netMass);
+		builder.append(", ");
+		for (double sectionMass : sections) {
+			// Get a number between 0 and 9
+			double relativeSectionMass = sectionMass / maxSectionMass;
+			String relativeSectionMassString = "9";
+			if (relativeSectionMass < 1.0) {
+				int desiredInteger = (int)(relativeSectionMass * 10);
+				relativeSectionMassString = String.valueOf(desiredInteger);
+			}
+			if (relativeSectionMass <= 0.0) {
+				relativeSectionMassString = "0";
+			}
+			builder.append(relativeSectionMassString);
+		}
+		builder.append("]");
+
+		return builder.toString();
 	}
 
 	/**
