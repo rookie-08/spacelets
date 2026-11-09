@@ -12,23 +12,32 @@ accurate. For example, while planets orbit around a star in a near-2D
 plane, this simulation places them on a 1D axis because it only
 considers the planets' semi-major axes.
 
+### Simulation
+
+(Unimplemented)
+The system will provide a snapshot of itself and prompt the user to
+simulate over a given time period. Snapshots are provided at the
+very start of the simulation, as well as before the user decides to
+run the simulation for a given amount of time. The user can decide
+to either run the simulation for an eon, or end the program as is.
+
 ### StarSystem
 
 Star systems consist of a central star, a protoplanetary disk, and a
 variable number of planets. The elements making up this system are
 lined up in a single axis: the distance to the central star.
 
-(Unimplemented) Over time, planets can form from material in the
+Over time, planets can form from material in the
 protoplanetary disk. Sections of the disk that have material are
 eligible to form a planet, and sections with more material will
 form a planet more quickly.
 
-(Unimplemented) Over time, planets will collect material from the
+Over time, planets will collect material from the
 protoplanetary disk. Mass from the disk will be transferred to the
 planets, which means that the disk's mass will decrease. The planets
 will take mass from different areas of the disk.
 
-(Unimplemented) Over time, if there are discrepancies in the disk
+Over time, if there are discrepancies in the disk
 (e.g. a hole in the disk), material in the disk will diffuse,
 allowing the disk's material to smooth and spread out if planets
 either take from the disk or give matter to the disk.
@@ -40,7 +49,7 @@ distance to the star. The star at the center of the star system is
 also a "planet" since it is also a rounded celestial body with a
 mass.
 
-(Unimplemented) Over time, a planet will collect material from its
+Over time, a planet will collect material from its
 star system's protoplanetary disk. As the planet collects matter
 from the disk, the location of the missing disk material will be
 distributed so the planet doesn't take material from an exact in the
@@ -48,3 +57,6 @@ system. Larger planets will have a wider distribution of material
 to collect from. They will also collect material faster; this will
 be represented by the fraction of a disk section that a planet can
 take at a given instance of time.
+
+(Unimplemented)
+Planets have names, allowing them to be tracked.

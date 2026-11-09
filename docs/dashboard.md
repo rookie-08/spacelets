@@ -2,23 +2,43 @@ Tracking what is yet to be done.
 
 Next Steps
 
-- [ ] Review Considerations
+- [X] Review Considerations
 
-- [ ] Select Considerations to Turn Into Next Steps
+- [X] Select Considerations to Turn Into Next Steps
 
-Considerations
+- [X] Update basic requirement for v0.3
 
-- Version v0.3+ ideas
+- [X] Create milestone document for v0.3
 
-	- Disk class
+- [ ] Designing
 
-	- Refactor disc to disk
+	- [ ] Wiki
 
-	- Verbose simulation display (terminal) and softcoding
+	- [ ] UML
 
-	- Define units
+	- [ ] Stubs
 
-	- Planets begin to pull on each other
+	- [ ] Implement
+
+- [ ] v0.3 milestones
+
+	- [ ] Verbosity
+
+		- [ ] Verbose output
+		
+		- [ ] User controls simulation time
+
+	- [ ] Disk diffusion
+
+		- [ ] Refactor disc to disk
+
+		- [ ] Disk class
+
+		- [ ] Disk diffusion
+
+	- [ ] Tug of War
+
+		- Planets begin to pull on each other
 
 		- If planets are far away, they do not move
 
@@ -30,9 +50,7 @@ Considerations
 
 		- Planets have notes (e.g. "formed from collision")
 
-	- Moons
-
-	- Asteroids, Comets, Dwarf Planets
+v0.4+ Ideas
 
 - Define a possible development process
 

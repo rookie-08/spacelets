@@ -55,3 +55,7 @@ A list of ideas for the project.
 - Tidal locking
 
 - Surface temperature, internal temperature
+
+- Moons
+
+- Asteroids, Comets, Dwarf Planets
