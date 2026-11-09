@@ -20,6 +20,8 @@ Next Steps
 
 - [X] verbose tostring
 
+- [ ] NameGenerator
+
 - [ ] Designing
 
 	- [ ] Wiki
