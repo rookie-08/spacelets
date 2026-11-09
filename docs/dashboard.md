@@ -36,15 +36,15 @@ Next Steps
 
 	- [X] Implement
 
-- [ ] Designing (Disc diffusion)
+- [X] Designing (Disc diffusion)
 
-	- [ ] Wiki
+	- [X] Wiki
 
-	- [ ] UML
+	- [X] UML
 
-	- [ ] Stubs
+	- [X] Stubs
 
-	- [ ] Implement
+	- [X] Implement
 
 - [ ] Designing
 

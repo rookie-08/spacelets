@@ -70,7 +70,7 @@ public class StarSystem {
 		for (int i = 0; i < planets.size(); i++) {
 			Planet planet = planets.get(i);
 			double loc = planet.chooseFeedLoc();
-			double massTaken = disk.loseMass(loc, 0.05);
+			double massTaken = disk.takeMass(loc, 0.05);
 			planet.gainMass(massTaken);
 		}
 	}

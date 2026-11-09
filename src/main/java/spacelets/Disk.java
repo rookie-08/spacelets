@@ -92,7 +92,7 @@ public class Disk {
 	 * @param frac The fraction of matter to take from the section.
 	 * @return The mass taken from the disk, in Earth masses.
 	 */
-	public double loseMass(int section, double frac) {
+	public double takeMass(int section, double frac) {
 		double usedFrac = frac;
 		if (usedFrac < 0.0) {
 			usedFrac = 0.0;
@@ -116,7 +116,7 @@ public class Disk {
 	 * @param frac The fraction of matter to take from the disc section. 
 	 * @return The mass taken from the disk, in Earth masses.
 	 */
-	public double loseMass(double position, double frac) {
+	public double takeMass(double position, double frac) {
 		// Calculate section number
 		int section = (int)(position / LENGTH * NUM_SECTIONS);
 		
@@ -130,7 +130,7 @@ public class Disk {
 
 
 		// Remove mass from section
-		return loseMass(section, frac);
+		return takeMass(section, frac);
 	}
 
 	/**
@@ -156,9 +156,33 @@ public class Disk {
 		for (int i = 0; i < NUM_SECTIONS; i++) {
 			double sectionMass = sections[i];
 			if (random.nextDouble() < 0.01 * sectionMass) {
-				summons[i] = loseMass(i, 0.1);
+				summons[i] = takeMass(i, 0.1);
 			} 
 		}
 		return summons;
+	}
+
+	/**
+	 * Add mass to a section of the disk.
+	 * 
+	 * @param section Deposit mass in this section ID.
+	 * @param amt Positive amount of mass to deposit, in Earth masses.
+	 */
+	public void depositMass(int section, double amt) {
+		if (amt < 0) {
+			amt = 0;
+		}
+		sections[section] += amt;
+	}
+
+	/**
+	 * Takes a fraction of matter from one section of the disk and
+	 * places it in another section of the disk.
+	 */
+	public void diffuse() {
+		int section0 = random.nextInt(0, NUM_SECTIONS);
+		int section1 = random.nextInt(0, NUM_SECTIONS);
+		double massTaken = takeMass(section0, 0.05);
+		depositMass(section1, massTaken);
 	}
 }

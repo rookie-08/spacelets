@@ -36,7 +36,7 @@ public class DiskTest {
 		String expected = "Disk [90.0, 0999999999]";
 
 		// Invoke
-		disk.loseMass(section, frac);
+		disk.takeMass(section, frac);
 		String actual = disk.toString();
 
 		// Analyze
@@ -52,7 +52,7 @@ public class DiskTest {
 		String expected = "Disk [95.0, 5999999999]";
 
 		// Invoke
-		disk.loseMass(section, frac);
+		disk.takeMass(section, frac);
 		String actual = disk.toString();
 
 		// Analyze
@@ -68,7 +68,7 @@ public class DiskTest {
 		String expected = "Disk [97.7, 9999979999]";
 
 		// Invoke
-		disk.loseMass(section, frac);
+		disk.takeMass(section, frac);
 		String actual = disk.toString();
 
 		// Analyze
@@ -84,7 +84,7 @@ public class DiskTest {
 		String expected = "Disk [98.0, 9999989999]";
 
 		// Invoke
-		disk.loseMass(position, frac);
+		disk.takeMass(position, frac);
 		String actual = disk.toString();
 
 		// Analyze
@@ -100,7 +100,7 @@ public class DiskTest {
 		String expected = "Disk [100.0, 9999999999]";
 
 		// Invoke
-		disk.loseMass(position, frac);
+		disk.takeMass(position, frac);
 		String actual = disk.toString();
 
 		// Analyze
@@ -116,7 +116,7 @@ public class DiskTest {
 		String expected = "Disk [90.0, 0999999999]";
 
 		// Invoke
-		disk.loseMass(position, frac);
+		disk.takeMass(position, frac);
 		String actual = disk.toString();
 
 		// Analyze
