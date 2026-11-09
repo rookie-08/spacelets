@@ -18,7 +18,7 @@ Next Steps
 
 - [X] Planet names
 
-- [ ] verbose tostring
+- [X] verbose tostring
 
 - [ ] Designing
 
@@ -32,17 +32,17 @@ Next Steps
 
 - [ ] v0.3 milestones
 
-	- [ ] Verbosity
+	- [X] Verbosity
 
-		- [ ] Verbose output
+		- [X] Verbose output
 
-			- [ ] Planets with names
+			- [X] Planets with names
 
-			- [ ] Planets tostring
+			- [X] Planets tostring
 
-			- [ ] System tostring
+			- [X] System tostring
 		
-		- [ ] User controls simulation time
+		- [X] User controls simulation time
 
 	- [X] Disk diffusion
 
