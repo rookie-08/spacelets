@@ -24,7 +24,7 @@ public class PlanetTest {
 	 * @param times
 	 * @return [mean, stddev]
 	 */
-	public double[] invokeCFL(Random random, Planet planet, int times) {
+	public double[] invokeCFL(Planet planet, int times) {
 		// Setup
 		double[] dataset = new double[times];
 		double mean = 0.0;
@@ -32,7 +32,7 @@ public class PlanetTest {
 		
 		// Collect data (and create mean)
 		for (int i = 0; i < times; i++) {
-			double entry = planet.chooseFeedLoc(random);
+			double entry = planet.chooseFeedLoc();
 			dataset[i] = entry;
 			mean += entry / times;
 		}
@@ -115,7 +115,7 @@ public class PlanetTest {
 		String expected = "Planet [mass=1.0, position=5.0]";
 
 		// Invoke
-		Planet planet = new Planet(mass, position);
+		Planet planet = new Planet(mass, position, new Random(0l));
 		String actual = planet.toString();
 			
 		// Analyze
@@ -125,7 +125,7 @@ public class PlanetTest {
 	@Test
 	public void gainMass() {
 		// Setup
-		Planet planet = new Planet(1.0, 5.0);
+		Planet planet = new Planet(1.0, 5.0, new Random(0l));
 		double amt = 1.0;
 		String expected = "Planet [mass=2.0, position=5.0]";
 
@@ -141,10 +141,10 @@ public class PlanetTest {
 	public void chooseFeedLoc() {
 		// Setup
 		Random random = new Random(0l);
-		Planet planet = new Planet(1.0, 5.0);
+		Planet planet = new Planet(1.0, 5.0, random);
 
 		// Invoke
-		double[] actual = invokeCFL(random, planet, 100);
+		double[] actual = invokeCFL(planet, 100);
 
 		// Analyze
 		assertEquals(calibrate(5.0, actual[0]), 5.0);

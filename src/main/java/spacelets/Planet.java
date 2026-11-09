@@ -21,15 +21,21 @@ public class Planet {
 	private double position;
 
 	/**
+	 * Random number generator for methods.
+	 */
+	Random random;
+
+	/**
 	 * Create a planet with a set mass.
 	 * 
 	 * @param mass The mass to set this planet to, in <unit>s.
 	 * @param position Where to place this planet. Distance from 
 	 * star in <unit>s.
 	 */
-	public Planet(double mass, double posiiton) {
+	public Planet(double mass, double posiiton, Random random) {
 		this.mass = mass;
 		this.position = posiiton;
+		this.random = random;
 	}
 
 	/**
@@ -55,10 +61,9 @@ public class Planet {
 	 * location. However, the variance of the selected location
 	 * increases as the planet's mass increases.
 	 * 
-	 * @param random A random number generator.
 	 * @return The disk section's distance to the star.
 	 */
-	public double chooseFeedLoc(Random random) {
+	public double chooseFeedLoc() {
 		double mean = position;
 		double stddev = CFL_K0 * mass;
 

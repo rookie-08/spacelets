@@ -44,7 +44,7 @@ public class StarSystem {
 	 */
 	private void summon(double mass, int section) {
 		double distance = disk.choosePosition(section);
-		Planet planet = new Planet(mass, distance);
+		Planet planet = new Planet(mass, distance, random);
 		planets.add(planet);
 	}
 
@@ -71,7 +71,7 @@ public class StarSystem {
 	private void feedPlanets() {
 		for (int i = 0; i < planets.size(); i++) {
 			Planet planet = planets.get(i);
-			double loc = planet.chooseFeedLoc(random);
+			double loc = planet.chooseFeedLoc();
 			double massTaken = disk.loseMass(loc, 0.05);
 			planet.gainMass(massTaken);
 		}
