@@ -81,6 +81,7 @@ public class StarSystem {
 	public void update() {
 		trySummon();
 		feedPlanets();
+		disk.diffuse();
 	}
 
 	/**
