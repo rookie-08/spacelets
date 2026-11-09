@@ -122,7 +122,17 @@ public class StarSystem {
 	 */
 	@Override 
 	public String toString() {
-		return "StarSystem [Planets(" + planets.size() + ")]";
+		StringBuilder builder = new StringBuilder();
+
+		builder.append("StarSystem\n");
+		builder.append(disk.toString() + "\n");
+		builder.append("Planets (" + planets.size() + "):\n");
+		for (String planetName : planets.keySet()) {
+			Planet planet = planets.get(planetName);
+			builder.append(planet.toString() + "\n");
+		}
+
+		return builder.toString();
 	}
 
 }

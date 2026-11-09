@@ -1,6 +1,7 @@
 package spacelets;
 
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * Runs a simulation of a star system.
@@ -51,6 +52,12 @@ public class Spacelets {
 		system.update();
 	}
 
+	public void updateMultiple(int times) {
+		for (int i = 0; i < times; i++) {
+			update();
+		}
+	}
+
 	/**
 	 * Run the program by making a new simulation
 	 * and updating it once.
@@ -60,10 +67,24 @@ public class Spacelets {
 	public static void main(String[] args) {
 		System.out.println("Starting simulation.");
 		Spacelets simulation = new Spacelets();
-		for (int i = 0; i < 1000; i++) {
-			simulation.update();
+
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.println(simulation.system);
+		System.out.print("Press enter to continue with simulation ");
+		String userInputString = scanner.nextLine();
+
+		boolean sentinel = true;
+		while (sentinel) {
+			simulation.updateMultiple(1);
 			System.out.println(simulation.system);
+			System.out.print("Type 'END' to end simulation. Otherwise, press ENTER to continue ");
+			userInputString = scanner.nextLine();
+			if (userInputString.equals("END")) {
+				sentinel = false;
+			}
 		}
+		scanner.close();
 		System.out.println("End of program");
 	}
 
