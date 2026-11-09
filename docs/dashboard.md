@@ -26,6 +26,16 @@ Next Steps
 
 		- [X] Replace star system disk
 
+- [ ] Designing (Refactor Random)
+
+	- [X] Wiki
+
+	- [X] UML
+
+	- [ ] Stubs
+
+	- [ ] Implement
+
 - [ ] Designing (Disc diffusion)
 
 	- [ ] Wiki

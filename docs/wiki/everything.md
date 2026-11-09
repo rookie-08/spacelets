@@ -27,6 +27,7 @@ Star systems consist of a central star, a protoplanetary disk, and a
 variable number of planets. The elements making up this system are
 lined up in a single axis: the distance to the central star.
 
+### Protoplanetary Disk
 Over time, planets can form from material in the
 protoplanetary disk. Sections of the disk that have material are
 eligible to form a planet, and sections with more material will
