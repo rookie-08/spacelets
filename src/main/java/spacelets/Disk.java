@@ -1,5 +1,7 @@
 package spacelets;
 
+import java.util.Random;
+
 /**
  * A protoplanetary disk. It is divided into sections based on the
  * distance of each section to the star. Mass can be taken from the
@@ -123,5 +125,34 @@ public class Disk {
 
 		// Remove mass from section
 		return loseMass(section, frac);
+	}
+
+	/**
+	 * Get a randomly-generated distance value that sits within a
+	 * `section` of the Disk.
+	 */
+	public double choosePosition(Random random, int section) {
+		double distance0 = (LENGTH * section / NUM_SECTIONS);
+		double distance1 = (LENGTH * (section + 1) / NUM_SECTIONS);
+		double distance = random.nextDouble(distance0, distance1);
+		return distance;
+	}
+
+	/**
+	 * Randomly takes fractions of the disk's sections to be turned
+	 * into planets.
+	 * 
+	 * @return An array of doubles representing the mass taken from
+	 * each section of the disk during the operation.
+	 */
+	public double[] takeSummons(Random random) {
+		double[] summons = new double[NUM_SECTIONS];
+		for (int i = 0; i < NUM_SECTIONS; i++) {
+			double sectionMass = sections[i];
+			if (random.nextDouble() < 0.01 * sectionMass) {
+				summons[i] = loseMass(i, 0.1);
+			} 
+		}
+		return summons;
 	}
 }

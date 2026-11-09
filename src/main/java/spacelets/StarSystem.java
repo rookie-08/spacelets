@@ -11,24 +11,9 @@ import java.util.Random;
  */
 public class StarSystem {
 	/**
-	 * The number of disk sections to have when creating this system.
-	 */
-	private static final int DISK_NUM_SECTIONS = 10;
-
-	/**
-	 * The distance of the last disk section to the star, in <unit>s.
-	 */
-	private static final double DISK_LENGTH = 10.0;
-
-	/**
-	 * The total mass of the disk when creating this system.
-	 */
-	private static final double DISK_MASS = 100.0;
-
-	/**
 	 * The protoplanetary disk and its sections' masses.
 	 */
-	private final double[] disk;
+	private final Disk disk;
 
 	/**
 	 * The planets orbiting this system's star.
@@ -40,43 +25,8 @@ public class StarSystem {
 	 * no planets (yet).
 	 */
 	public StarSystem() {
-		// Create disk
-		disk = new double[DISK_NUM_SECTIONS];
-		double massPerDiskSection = DISK_MASS / DISK_NUM_SECTIONS;
-		for (int i = 0; i < DISK_NUM_SECTIONS; i++) {
-			disk[i] = massPerDiskSection;
-		}
-		// Create planets and star
+		disk = new Disk();
 		planets = new ArrayList<>();
-	}
-
-	/**
-	 * Take mass from a section of the protoplanetary disk.
-	 * 
-	 * Even though `position` is a double and not an int, the
-	 * parameter will be translated to the closest section of
-	 * disk debris to take.
-	 * 
-	 * @param position The distance of the section to the star.
-	 * @param frac The fraction of matter, from the section of the
-	 * disk, to take. 
-	 * @return The amount of mass taken from the disk section.
-	 */
-	private double loseMass(double position, double frac) {
-		// Calculate section number
-		int section = (int)(position / DISK_LENGTH * DISK_NUM_SECTIONS);
-		if (section < 0) {
-			section = 0;
-		}
-		if (section >= DISK_NUM_SECTIONS) {
-			section = DISK_NUM_SECTIONS - 1;
-		}
-
-		// Remove mass from section
-		double massTaken = disk[section] * frac;
-		disk[section] = disk[section] - massTaken;
-
-		return massTaken;
 	}
 	
 	/**
@@ -87,12 +37,8 @@ public class StarSystem {
 	 * @param random Random number generator.
 	 * @param section The ID of the disk section to place the planet.
 	 */
-	private void summon(Random random, int section) {
-		double distance0 = (DISK_LENGTH * section / DISK_NUM_SECTIONS);
-		double distance1 = (DISK_LENGTH * (section + 1) / DISK_NUM_SECTIONS);
-		double distance = random.nextDouble(distance0, distance1);
-
-		double mass = loseMass(distance, 0.1);
+	private void summon(Random random, double mass, int section) {
+		double distance = disk.choosePosition(random, section);
 		Planet planet = new Planet(mass, distance);
 		planets.add(planet);
 	}
@@ -105,11 +51,12 @@ public class StarSystem {
 	 * @param random Random number generator.
 	 */
 	private void trySummon(Random random) {
-		for (int i = 0; i < DISK_NUM_SECTIONS; i++) {
-			double sectionMass = disk[i];
-			if (random.nextDouble() < 0.01 * sectionMass) {
-				summon(random, i);
-			} 
+		double[] summons = disk.takeSummons(random);
+		for (int i = 0; i < summons.length; i++) {
+			double summonMass = summons[i];
+			if (summonMass > 0) {
+				summon(random, summonMass, i);
+			}
 		}
 	}
 
@@ -122,7 +69,7 @@ public class StarSystem {
 		for (int i = 0; i < planets.size(); i++) {
 			Planet planet = planets.get(i);
 			double loc = planet.chooseFeedLoc(random);
-			double massTaken = loseMass(loc, 0.05);
+			double massTaken = disk.loseMass(loc, 0.05);
 			planet.gainMass(massTaken);
 		}
 	}
