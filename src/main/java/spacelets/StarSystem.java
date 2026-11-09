@@ -1,9 +1,7 @@
 package spacelets;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Random;
 import java.util.Set;
 import java.util.Map;
@@ -45,10 +43,20 @@ public class StarSystem {
 		this.random = random;
 	}
 
+	/**
+	 * Returns a name, generated via a set of rules.
+	 * 
+	 * @return A name.
+	 */
 	private String generateNameRaw() {
 		return String.valueOf(random.nextInt(1000, 10000));
 	}
 
+	/**
+	 * Always returns a unique name.
+	 * 
+	 * @return A unique name.
+	 */
 	private String generateName() {
 		String name = generateNameRaw();
 		while (planetNames.contains(name)) {

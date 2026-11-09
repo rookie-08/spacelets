@@ -16,7 +16,9 @@ Next Steps
 
 - [X] Designing (Disc diffusion)
 
-- [ ] Planet names and verbose tostring
+- [X] Planet names
+
+- [ ] verbose tostring
 
 - [ ] Designing
 
