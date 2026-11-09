@@ -101,7 +101,11 @@ public class Disk {
 	 * @param frac The fraction of matter to take from the disc section. 
 	 * @return The mass taken from the disk, in Earth masses.
 	 */
-	public double loseMass(double posiiton, double frac) {
-		return 0.0;
+	public double loseMass(double position, double frac) {
+		// Calculate section number
+		int section = (int)(position / LENGTH * NUM_SECTIONS);
+
+		// Remove mass from section
+		return loseMass(section, frac);
 	}
 }

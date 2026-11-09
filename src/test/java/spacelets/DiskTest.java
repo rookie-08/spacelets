@@ -68,4 +68,20 @@ public class DiskTest {
 		// Analyze
 		assertEquals(expected, actual);
 	}
+
+	@Test
+	public void loseMass3() {
+		// Setup
+		Disk disk = new Disk();
+		double position = 5.32;
+		double frac = 0.2;
+		String expected = "Disk [98.0, 9999989999]";
+
+		// Invoke
+		disk.loseMass(position, frac);
+		String actual = disk.toString();
+
+		// Analyze
+		assertEquals(expected, actual);
+	}
 }
