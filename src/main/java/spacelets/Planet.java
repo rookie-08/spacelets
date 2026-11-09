@@ -11,6 +11,11 @@ public class Planet {
 	private static final double CFL_K0 = 1.0;
 	
 	/**
+	 * The name of the planet.
+	 */
+	private final String name;
+
+	/**
 	 * The mass of this planet, in <unit>s.
 	 */
 	private double mass;
@@ -32,7 +37,8 @@ public class Planet {
 	 * @param position Where to place this planet. Distance from 
 	 * star in <unit>s.
 	 */
-	public Planet(double mass, double posiiton, Random random) {
+	public Planet(String name, double mass, double posiiton, Random random) {
+		this.name = name;
 		this.mass = mass;
 		this.position = posiiton;
 		this.random = random;
@@ -43,7 +49,7 @@ public class Planet {
 	 */
 	@Override 
 	public String toString() {
-		return "Planet [mass=" + mass + ", position=" + position + "]";
+		return "Planet [" + name + ", m=" + mass + ", x=" + position + "]";
 	}
 
 	/**

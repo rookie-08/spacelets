@@ -1,8 +1,12 @@
 package spacelets;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
+import java.util.Map;
 
 /**
  * Contains a star, a protoplanetary disk, and planets.
@@ -18,7 +22,12 @@ public class StarSystem {
 	/**
 	 * The planets orbiting this system's star.
 	 */
-	private final List<Planet> planets;
+	private final Map<String, Planet> planets;
+
+	/**
+	 * A set of unique names.
+	 */
+	private final Set<String> planetNames;
 
 	/**
 	 * Random number generator for methods.
@@ -31,8 +40,22 @@ public class StarSystem {
 	 */
 	public StarSystem(Random random) {
 		disk = new Disk(random);
-		planets = new ArrayList<>();
+		planets = new HashMap<>();
+		planetNames = new HashSet<>();
 		this.random = random;
+	}
+
+	private String generateNameRaw() {
+		return String.valueOf(random.nextInt(1000, 10000));
+	}
+
+	private String generateName() {
+		String name = generateNameRaw();
+		while (planetNames.contains(name)) {
+			name = generateNameRaw();
+		}
+		planetNames.add(name);
+		return name;
 	}
 	
 	/**
@@ -44,8 +67,9 @@ public class StarSystem {
 	 */
 	private void summon(double mass, int section) {
 		double distance = disk.choosePosition(section);
-		Planet planet = new Planet(mass, distance, random);
-		planets.add(planet);
+		String name = generateName();
+		Planet planet = new Planet(name, mass, distance, random);
+		planets.put(name, planet);
 	}
 
 	/**
@@ -67,8 +91,8 @@ public class StarSystem {
 	 * Makes each planet collect matter from the protoplanetary disk.
 	 */
 	private void feedPlanets() {
-		for (int i = 0; i < planets.size(); i++) {
-			Planet planet = planets.get(i);
+		for (String planetName : planets.keySet()) {
+			Planet planet = planets.get(planetName);
 			double loc = planet.chooseFeedLoc();
 			double massTaken = disk.takeMass(loc, 0.05);
 			planet.gainMass(massTaken);

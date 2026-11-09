@@ -12,39 +12,11 @@ Next Steps
 
 - [X] Designing (disk)
 
-	- [X] Wiki
-
-	- [X] UML
-
-	- [X] Stubs
-
-	- [X] Implement
-
-		- [X] Disk.java
-
-		- [X] Disk.loseMass
-
-		- [X] Replace star system disk
-
 - [X] Designing (Refactor Random)
-
-	- [X] Wiki
-
-	- [X] UML
-
-	- [X] Stubs
-
-	- [X] Implement
 
 - [X] Designing (Disc diffusion)
 
-	- [X] Wiki
-
-	- [X] UML
-
-	- [X] Stubs
-
-	- [X] Implement
+- [ ] Planet names and verbose tostring
 
 - [ ] Designing
 
@@ -61,16 +33,22 @@ Next Steps
 	- [ ] Verbosity
 
 		- [ ] Verbose output
+
+			- [ ] Planets with names
+
+			- [ ] Planets tostring
+
+			- [ ] System tostring
 		
 		- [ ] User controls simulation time
 
-	- [ ] Disk diffusion
+	- [X] Disk diffusion
 
 		- [X] Refactor disc to disk
 
 		- [X] Disk class
 
-		- [ ] Disk diffusion
+		- [X] Disk diffusion
 
 	- [ ] Tug of War
 
