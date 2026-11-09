@@ -10,21 +10,31 @@ Next Steps
 
 - [X] Create milestone document for v0.3
 
-- [ ] Designing (disk)
+- [X] Designing (disk)
 
 	- [X] Wiki
 
 	- [X] UML
 
+	- [X] Stubs
+
+	- [X] Implement
+
+		- [X] Disk.java
+
+		- [X] Disk.loseMass
+
+		- [X] Replace star system disk
+
+- [ ] Designing (Disc diffusion)
+
+	- [ ] Wiki
+
+	- [ ] UML
+
 	- [ ] Stubs
 
 	- [ ] Implement
-
-		- [ ] Disk.java
-
-		- [ ] Disk.loseMass
-
-		- [ ] Replace star system disk
 
 - [ ] Designing
 
@@ -46,9 +56,9 @@ Next Steps
 
 	- [ ] Disk diffusion
 
-		- [ ] Refactor disc to disk
+		- [X] Refactor disc to disk
 
-		- [ ] Disk class
+		- [X] Disk class
 
 		- [ ] Disk diffusion
 
