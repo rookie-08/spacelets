@@ -10,6 +10,22 @@ Next Steps
 
 - [X] Create milestone document for v0.3
 
+- [ ] Designing (disk)
+
+	- [X] Wiki
+
+	- [X] UML
+
+	- [ ] Stubs
+
+	- [ ] Implement
+
+		- [ ] Disk.java
+
+		- [ ] Disk.loseMass
+
+		- [ ] Replace star system disk
+
 - [ ] Designing
 
 	- [ ] Wiki
