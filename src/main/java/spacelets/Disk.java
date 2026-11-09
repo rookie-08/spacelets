@@ -85,7 +85,9 @@ public class Disk {
 	 * @return The mass taken from the disk, in Earth masses.
 	 */
 	public double loseMass(int section, double frac) {
-		return 0.0;
+		double massTaken = sections[section] * frac;
+		sections[section] -= massTaken;
+		return massTaken;
 	}
 
 	/**
