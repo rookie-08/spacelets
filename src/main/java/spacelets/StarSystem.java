@@ -30,7 +30,7 @@ public class StarSystem {
 	 * no planets (yet).
 	 */
 	public StarSystem(Random random) {
-		disk = new Disk();
+		disk = new Disk(random);
 		planets = new ArrayList<>();
 		this.random = random;
 	}
@@ -40,11 +40,10 @@ public class StarSystem {
 	 * 
 	 * The planet will be placed randomly in the disk section.
 	 * 
-	 * @param random Random number generator.
 	 * @param section The ID of the disk section to place the planet.
 	 */
 	private void summon(double mass, int section) {
-		double distance = disk.choosePosition(random, section);
+		double distance = disk.choosePosition(section);
 		Planet planet = new Planet(mass, distance);
 		planets.add(planet);
 	}
@@ -53,11 +52,9 @@ public class StarSystem {
 	 * Rolls multiple chances. Across all sections of disk. For each
 	 * time a chance is successful in this method, a planet will be
 	 * summoned.
-	 * 
-	 * @param random Random number generator.
 	 */
 	private void trySummon() {
-		double[] summons = disk.takeSummons(random);
+		double[] summons = disk.takeSummons();
 		for (int i = 0; i < summons.length; i++) {
 			double summonMass = summons[i];
 			if (summonMass > 0) {

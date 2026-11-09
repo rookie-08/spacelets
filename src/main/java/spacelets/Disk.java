@@ -32,14 +32,20 @@ public class Disk {
 	private final double[] sections;
 
 	/**
+	 * Random number generator for methods.
+	 */
+	private final Random random;
+
+	/**
 	 * Create a new disk with uniform density.
 	 */
-	public Disk() {
+	public Disk(Random random) {
 		sections = new double[NUM_SECTIONS];
 		double massPerSection = MASS / NUM_SECTIONS;
 		for (int i = 0; i < NUM_SECTIONS; i++) {
 			sections[i] = massPerSection;
 		}
+		this.random = random;
 	}
 
 	@Override
@@ -131,7 +137,7 @@ public class Disk {
 	 * Get a randomly-generated distance value that sits within a
 	 * `section` of the Disk.
 	 */
-	public double choosePosition(Random random, int section) {
+	public double choosePosition(int section) {
 		double distance0 = (LENGTH * section / NUM_SECTIONS);
 		double distance1 = (LENGTH * (section + 1) / NUM_SECTIONS);
 		double distance = random.nextDouble(distance0, distance1);
@@ -145,7 +151,7 @@ public class Disk {
 	 * @return An array of doubles representing the mass taken from
 	 * each section of the disk during the operation.
 	 */
-	public double[] takeSummons(Random random) {
+	public double[] takeSummons() {
 		double[] summons = new double[NUM_SECTIONS];
 		for (int i = 0; i < NUM_SECTIONS; i++) {
 			double sectionMass = sections[i];
