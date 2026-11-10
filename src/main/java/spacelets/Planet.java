@@ -26,6 +26,21 @@ public class Planet {
 	private double position;
 
 	/**
+	 * How difficult it is to change the planet's position.
+	 */
+	private double orbitInertia;
+
+	/**
+	 * The amount of force applies on the planet.
+	 */
+	private double orbitForce;
+
+	/**
+	 * Related to the amount of force the star is applying to the planet.
+	 */
+	private double orbitFriction;
+
+	/**
 	 * Random number generator for methods.
 	 */
 	Random random;
@@ -76,5 +91,23 @@ public class Planet {
 		double x = random.nextGaussian(mean, stddev);
 
 		return x;
+	}
+
+	/**
+	 * Changes the planet's orbital inertia to better reflect its
+	 * current position.
+	 */
+	public void adjustInertia() {
+		// orbitInertia = ???
+		// ...
+	}
+
+	/**
+	 * Changes the planet's position to better reflect its current
+	 * orbital inertia.
+	 */
+	public void adjustPosition() {
+		// position = ???
+		// ...
 	}
 }
