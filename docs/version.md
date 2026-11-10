@@ -1,4 +1,4 @@
-**Present Version:** v0.2 (Updated 11/7/2026)
+**Present Version:** v0.3 (Updated 11/9/2026)
 
 # Roadmap
 
