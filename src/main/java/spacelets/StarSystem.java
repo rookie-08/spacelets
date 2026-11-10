@@ -92,10 +92,25 @@ public class StarSystem {
 	}
 
 	/**
+	 * Adjusts the inertias of each planet, keeping them from 
+	 * migrating outwards by gaining mass with a constant
+	 * orbital inertia.
+	 */
+	private void anchorPlanets() {
+		for (String planetName : planets.keySet()) {
+			Planet planet = planets.get(planetName);
+			planet.adjustInertia();
+		}
+	}
+
+	/**
 	 * Adjusts the positions of each planet.
 	 */
 	private void shiftPlanets() {
-		// ...
+		for (String planetName : planets.keySet()) {
+			Planet planet = planets.get(planetName);
+			planet.adjustPosition();
+		}
 	}
 
 	/**
@@ -104,7 +119,10 @@ public class StarSystem {
 	public void update() {
 		trySummon();
 		feedPlanets();
+		anchorPlanets();
 		disk.diffuse();
+		calculateForces();
+		shiftPlanets();
 	}
 
 	/**

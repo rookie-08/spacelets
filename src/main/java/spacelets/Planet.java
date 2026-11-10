@@ -58,6 +58,7 @@ public class Planet {
 		this.mass = mass;
 		this.position = posiiton;
 		this.random = random;
+		adjustInertia();
 	}
 
 	/**
