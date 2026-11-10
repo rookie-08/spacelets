@@ -9,6 +9,7 @@ import java.util.Random;
  */
 public class Planet {
 	private static final double CFL_K0 = 1.0;
+	private static final double INERTIA_POSITION_K1 = 1.0;
 	
 	/**
 	 * The name of the planet.
@@ -98,8 +99,7 @@ public class Planet {
 	 * current position.
 	 */
 	public void adjustInertia() {
-		// orbitInertia = ???
-		// ...
+		orbitInertia = INERTIA_POSITION_K1 * mass / position;
 	}
 
 	/**
@@ -107,7 +107,6 @@ public class Planet {
 	 * orbital inertia.
 	 */
 	public void adjustPosition() {
-		// position = ???
-		// ...
+		position = INERTIA_POSITION_K1 * mass / orbitInertia;
 	}
 }
