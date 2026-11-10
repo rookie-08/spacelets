@@ -6,9 +6,19 @@ Next Steps
 
 v0.4+ Ideas
 
-- Planets either merge or get ejected
+- Planets that are too close
 
-- Planets could destroy and create disk material or subplanets
+	- Merge
+
+	- Eject
+
+	- Destroy themselves
+
+		- Create disk material
+
+		- Create tinier planets
+
+- Planets have a separate class called "GravitaionalBody"
 
 - Planets have notes (e.g. "formed from collision")
 

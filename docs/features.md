@@ -59,3 +59,5 @@ A list of ideas for the project.
 - Moons
 
 - Asteroids, Comets, Dwarf Planets
+
+- Non-uniform density disk
