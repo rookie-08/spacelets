@@ -85,6 +85,20 @@ public class StarSystem {
 	}
 
 	/**
+	 * Sets the forces of each planet.
+	 */
+	private void calculateForces() {
+		// ...
+	}
+
+	/**
+	 * Adjusts the positions of each planet.
+	 */
+	private void shiftPlanets() {
+		// ...
+	}
+
+	/**
 	 * Makes changes to the system.
 	 */
 	public void update() {
