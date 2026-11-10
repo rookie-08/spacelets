@@ -17,11 +17,6 @@ public class Spacelets {
 	private final StarSystem system;
 
 	/**
-	 * The age of the simulation in ticks.
-	 */
-	private int age;
-
-	/**
 	 * A random number generator that can start with a seed.
 	 */
 	private final Random random;
@@ -54,7 +49,6 @@ public class Spacelets {
 	 *  simulation and system.
 	 */
 	public void update() {
-		age++;
 		system.update();
 	}
 
