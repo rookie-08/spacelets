@@ -12,13 +12,13 @@ celestial body (the star). There are no simulations, graphics, etc
 yet. A simulation can be run on it, meaning that the simulation can
 have methods like "update()."
 
-### v0.2: Rise of the Planets (11/7/2026) (Current)
+### v0.2: Rise of the Planets (11/7/2026)
 The system's first signs of evolution. Planets can form from the disk
 over time, and the disk's mass will decrease as the planets grow.
 The disk's mass will also decrease as planets spawn in areas of the
 disk that still have mass.
 
-### v0.3: Look at Me (Developing)
+### v0.3: Look at Me (11/9/2026) (Current)
 - Small simulation controls. See all system contents and run
 simulation for an amount of time
 - Disk upgrades. Disk material can now diffuse within itself

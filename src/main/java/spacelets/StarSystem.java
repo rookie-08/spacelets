@@ -88,7 +88,29 @@ public class StarSystem {
 	 * Sets the forces of each planet.
 	 */
 	private void calculateForces() {
-		// ...
+		for (String name0 : planets.keySet()) {
+			Planet planet0 = planets.get(name0);
+			planet0.resetForce(); // Reset forces first
+			for (String name1 : planets.keySet()) {
+				if (!name1.equals(name0)) {
+					// For every ordered pair of nameA and nameB such that nameA != nameB
+					Planet planet1 = planets.get(name1);
+					planet0.affectForce(planet1);
+				}
+			}
+		}
+	}
+
+	/**
+	 * Adjusts the inertias of each planet, keeping them from 
+	 * migrating outwards by gaining mass with a constant
+	 * orbital inertia.
+	 */
+	private void affectPlanets() {
+		for (String planetName : planets.keySet()) {
+			Planet planet = planets.get(planetName);
+			planet.affectInertia();
+		}
 	}
 
 	/**
@@ -100,6 +122,16 @@ public class StarSystem {
 		for (String planetName : planets.keySet()) {
 			Planet planet = planets.get(planetName);
 			planet.adjustInertia();
+		}
+	}
+
+	/**
+	 * Calibrates the frictions of each planet.
+	 */
+	private void calibrateInertias() {
+		for (String planetName : planets.keySet()) {
+			Planet planet = planets.get(planetName);
+			planet.adjustFriction();
 		}
 	}
 
@@ -122,6 +154,8 @@ public class StarSystem {
 		anchorPlanets();
 		disk.diffuse();
 		calculateForces();
+		calibrateInertias();
+		affectPlanets();
 		shiftPlanets();
 	}
 

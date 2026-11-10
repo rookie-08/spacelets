@@ -9,7 +9,9 @@ import java.util.Random;
  */
 public class Planet {
 	private static final double CFL_K0 = 1.0;
-	private static final double INERTIA_POSITION_K1 = 1.0;
+	private static final double INERTIA_POSITION_K1 = 100000.0;
+	private static final double FORCE_K2 = 1.0;
+	private static final double FRICTION_K3 = 100.0;
 	
 	/**
 	 * The name of the planet.
@@ -109,5 +111,52 @@ public class Planet {
 	 */
 	public void adjustPosition() {
 		position = INERTIA_POSITION_K1 * mass / orbitInertia;
+	}
+
+	/**
+	 * Changes the planet's orbit friction force to reflect its
+	 * current position.
+	 */
+	public void adjustFriction() {
+		orbitFriction = FRICTION_K3 * mass / (position * position);
+	}
+
+	/**
+	 * Changes the planet's inertia according to how much orbital
+	 * force is acting on it.
+	 */
+	public void affectInertia() {
+		double usedForce = orbitForce;
+		if (Math.abs(orbitForce) < Math.abs(orbitFriction)) {
+			usedForce = 0.0;
+		}
+		orbitInertia += usedForce;
+		if (orbitInertia < 0.0) {
+			orbitInertia = 0.0;
+		}
+	}
+
+	/**
+	 * Sets this planet's force to zero.
+	 */
+	public void resetForce() {
+		orbitForce = 0.0;
+	}
+
+	/**
+	 * Changes this planet's force by an amount, based on its
+	 * relationship to another planet `other`.
+	 * @param other
+	 */
+	public void affectForce(Planet other) {
+		double dist = other.position - this.position;
+		if (dist != 0 && !Double.isNaN(dist)) {
+			double deltaForce = FORCE_K2 * other.mass * this.mass / (dist * dist);
+			if (dist < 0) { // THIS is further from the sun; other.pos < this.pos
+				orbitForce += deltaForce; // Increase inertia to bring THIS closer to the sun
+			} else { // dist > 0 // THIS is closer to the sun; other.pos > this.pos
+				orbitForce -= deltaForce; // Decrease inertia to bring THIS further from the sun
+			}
+		}
 	}
 }
