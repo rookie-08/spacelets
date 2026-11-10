@@ -1,5 +1,7 @@
 package spacelets;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import org.junit.jupiter.api.Test;
@@ -12,6 +14,12 @@ public class IntegerNameGeneratorTest {
 	public void overall() {
 		IntegerNameGenerator generator = new IntegerNameGenerator(new Random());
 
-		assert generator != null;
+		List<String> names = new ArrayList<>();
+
+		for (String name : generator) {
+			names.add(name);
+		}
+
+		assert names.size() > 0;
 	}
 }
