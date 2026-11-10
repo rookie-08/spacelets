@@ -1,9 +1,7 @@
 package spacelets;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Random;
-import java.util.Set;
 import java.util.Map;
 
 /**
@@ -23,47 +21,24 @@ public class StarSystem {
 	private final Map<String, Planet> planets;
 
 	/**
-	 * A set of unique names.
-	 */
-	private final Set<String> planetNames;
-
-	/**
 	 * Random number generator for methods.
 	 */
 	private final Random random;
 
 	/**
+	 * Name generator.
+	 */
+	private final NameGenerator nameGenerator;
+
+	/**
 	 * Create a new system with a star and protoplanetary disk, but
 	 * no planets (yet).
 	 */
-	public StarSystem(Random random) {
+	public StarSystem(Random random, NameGenerator nameGenerator) {
 		disk = new Disk(random);
 		planets = new HashMap<>();
-		planetNames = new HashSet<>();
 		this.random = random;
-	}
-
-	/**
-	 * Returns a name, generated via a set of rules.
-	 * 
-	 * @return A name.
-	 */
-	private String generateNameRaw() {
-		return String.valueOf(random.nextInt(1000, 10000));
-	}
-
-	/**
-	 * Always returns a unique name.
-	 * 
-	 * @return A unique name.
-	 */
-	private String generateName() {
-		String name = generateNameRaw();
-		while (planetNames.contains(name)) {
-			name = generateNameRaw();
-		}
-		planetNames.add(name);
-		return name;
+		this.nameGenerator = nameGenerator;
 	}
 	
 	/**
@@ -75,9 +50,11 @@ public class StarSystem {
 	 */
 	private void summon(double mass, int section) {
 		double distance = disk.choosePosition(section);
-		String name = generateName();
-		Planet planet = new Planet(name, mass, distance, random);
-		planets.put(name, planet);
+		String name = nameGenerator.next();
+		if (name != null) {
+			Planet planet = new Planet(name, mass, distance, random);
+			planets.put(name, planet);
+		}
 	}
 
 	/**

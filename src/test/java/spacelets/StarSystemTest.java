@@ -10,10 +10,11 @@ public class StarSystemTest {
 	@Test 
 	public void constructor() {
 		// setup
-		String expected = "StarSystem [Planets(0)]";
+		String expected = "StarSystem\nDisk [100.0, 9999999999]\nPlanets (0):\n";
 
 		// invoke
-		StarSystem system = new StarSystem(new Random(0l));
+		Random random = new Random(0l);
+		StarSystem system = new StarSystem(random, new IntegerNameGenerator(random));
 		String actual = system.toString();
 
 		// analyze

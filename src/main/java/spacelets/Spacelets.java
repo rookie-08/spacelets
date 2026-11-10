@@ -14,24 +14,30 @@ public class Spacelets {
 	/**
 	 * The actual model star system of the class.
 	 */
-	private StarSystem system;
+	private final StarSystem system;
 
 	/**
 	 * The age of the simulation in ticks.
 	 */
-	int age;
+	private int age;
 
 	/**
 	 * A random number generator that can start with a seed.
 	 */
-	Random random;
+	private final Random random;
+
+	/**
+	 * A name generator.
+	 */
+	private final NameGenerator nameGenerator;
 
 	/**
 	 * Create a brand new simulation with a random seed.
 	 */
 	public Spacelets() {
 		random = new Random();
-		system = new StarSystem(random);
+		nameGenerator = new IntegerNameGenerator(random);
+		system = new StarSystem(random, nameGenerator);
 		age = 0;
 	}
 

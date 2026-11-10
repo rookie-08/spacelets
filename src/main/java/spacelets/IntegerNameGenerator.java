@@ -80,7 +80,7 @@ public class IntegerNameGenerator implements NameGenerator {
 		// Attempt to generate unique name (and check uniqueness)
 		int overflow = 0;
 		while ((currentName == null || usedNames.contains(currentName)) && overflow < ATTEMPT_LIMIT) {
-			currentName = String.valueOf(random.nextInt(1000, 1005));
+			currentName = String.valueOf(random.nextInt(1000, 10000));
 			overflow++;
 		}
 		// Set name to null if unique name cannot be generated
