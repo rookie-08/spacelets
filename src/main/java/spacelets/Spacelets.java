@@ -33,7 +33,6 @@ public class Spacelets {
 		random = new Random();
 		nameGenerator = new IntegerNameGenerator(random);
 		system = new StarSystem(random, nameGenerator);
-		age = 0;
 	}
 
 	/**
